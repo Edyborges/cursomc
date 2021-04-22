@@ -1,9 +1,9 @@
-package com.borges.cursomc.repositories;
+package com.borges.projetospringboot.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.borges.cursomc.domain.Categoria;
+import com.borges.projetospringboot.domain.Categoria;
 
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {

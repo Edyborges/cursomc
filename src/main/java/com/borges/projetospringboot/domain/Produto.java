@@ -1,4 +1,4 @@
-package com.borges.cursomc.domain;
+package com.borges.projetospringboot.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;

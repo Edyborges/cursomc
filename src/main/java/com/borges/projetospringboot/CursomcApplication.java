@@ -1,4 +1,4 @@
-package com.borges.cursomc;
+package com.borges.projetospringboot;
 
 import java.util.Arrays;
 
@@ -7,21 +7,26 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.borges.cursomc.domain.Categoria;
-import com.borges.cursomc.domain.Cidade;
-import com.borges.cursomc.domain.Estado;
-import com.borges.cursomc.domain.Produto;
-import com.borges.cursomc.repositories.CategoriaRepository;
-import com.borges.cursomc.repositories.ProdutoRepository;
+import com.borges.projetospringboot.domain.Categoria;
+import com.borges.projetospringboot.domain.Cidade;
+import com.borges.projetospringboot.domain.Estado;
+import com.borges.projetospringboot.domain.Produto;
+import com.borges.projetospringboot.repositories.CategoriaRepository;
+import com.borges.projetospringboot.repositories.CidadeRepository;
+import com.borges.projetospringboot.repositories.EstadoRepository;
+import com.borges.projetospringboot.repositories.ProdutoRepository;
 
 @SpringBootApplication
 public class CursomcApplication implements CommandLineRunner {
 
 	@Autowired
-	CategoriaRepository categoriaRepository;
-	
+	CategoriaRepository categoriaRepository;	
 	@Autowired
 	ProdutoRepository produtoRepository;
+	@Autowired
+	EstadoRepository estadoRepository;
+	@Autowired
+	CidadeRepository cidadeRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CursomcApplication.class, args);
@@ -52,10 +57,19 @@ public class CursomcApplication implements CommandLineRunner {
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
 		produtoRepository.saveAll(Arrays.asList(p1,p2,p3));
 		
+		
 		Estado est1 = new Estado(null, "Minas Gerais");
 		Estado est2 =  new Estado(null, "São Paulo");
 		
-		Cidade c1 =new Cidade (null, "Uberlândia", est1 );
+		Cidade c1 = new Cidade (null, "Uberlândia", est1 );
+		Cidade c2 = new Cidade(null, "São Paulo", est2);
+		Cidade c3 =  new Cidade(null, "Campinas", est2);
+		
+		est1.getCidades().addAll(Arrays.asList(c1));
+		est2.getCidades().addAll(Arrays.asList(c2,c3));
+		
+		estadoRepository.saveAll(Arrays.asList(est1, est2));
+		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
 		
 		
 	}

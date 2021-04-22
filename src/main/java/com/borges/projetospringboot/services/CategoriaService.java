@@ -1,13 +1,13 @@
-package com.borges.cursomc.services;
+package com.borges.projetospringboot.services;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.borges.cursomc.domain.Categoria;
-import com.borges.cursomc.repositories.CategoriaRepository;
-import com.borges.cursomc.services.exceptions.ObjectNotFoundException;
+import com.borges.projetospringboot.domain.Categoria;
+import com.borges.projetospringboot.repositories.CategoriaRepository;
+import com.borges.projetospringboot.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class CategoriaService {

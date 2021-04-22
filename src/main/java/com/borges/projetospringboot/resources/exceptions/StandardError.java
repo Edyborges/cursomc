@@ -1,4 +1,4 @@
-package com.borges.cursomc.resources.exceptions;
+package com.borges.projetospringboot.resources.exceptions;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.borges.cursomc.services.exceptions;
+package com.borges.projetospringboot.services.exceptions;
 
 public class ObjectNotFoundException extends RuntimeException{
 
