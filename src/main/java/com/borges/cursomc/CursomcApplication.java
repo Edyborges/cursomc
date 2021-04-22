@@ -8,6 +8,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.borges.cursomc.domain.Categoria;
+import com.borges.cursomc.domain.Cidade;
+import com.borges.cursomc.domain.Estado;
 import com.borges.cursomc.domain.Produto;
 import com.borges.cursomc.repositories.CategoriaRepository;
 import com.borges.cursomc.repositories.ProdutoRepository;
@@ -50,9 +52,17 @@ public class CursomcApplication implements CommandLineRunner {
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
 		produtoRepository.saveAll(Arrays.asList(p1,p2,p3));
 		
+		Estado est1 = new Estado(null, "Minas Gerais");
+		Estado est2 =  new Estado(null, "São Paulo");
+		
+		Cidade c1 =new Cidade (null, "Uberlândia", est1 );
 		
 		
 	}
+
+	
+
+
 
 }
 
